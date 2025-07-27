@@ -101,12 +101,15 @@ img {
   padding: 24px 0;
   position: relative;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-header-list-link.current {
   color: #404bbf;
 }
 
-.nav-list-link:hover,
-.nav-list-link:focus,
-.nav-list-link:active,
+.nav-header-list-link:hover,
+.nav-header-list-link:focus,
+.nav-header-list-link:active,
 .address-list-link:hover,
 .address-list-link:focus,
 .address-list-link:active {
@@ -224,6 +227,7 @@ img {
   display: flex;
   list-style: none;
   gap: 24px;
+  margin: 0;
 }
 
 .feature-list-item {
@@ -317,6 +321,7 @@ img {
   justify-content: center;
   gap: 24px;
   padding: 0;
+  margin: 8px 0 0;
 }
 
 .list-item-social {
@@ -356,8 +361,13 @@ img {
 
 /* Portfolio */
 
+.portfolio-list-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .portfolio {
-  padding-top: 120px;
   padding-bottom: 120px;
 }
 
@@ -378,8 +388,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 48px 24px;
-  /* box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), rgba(46, 47, 66, 0.08); */
+  margin: 0;
 }
 
 .portfolio-list-item:hover {
@@ -388,12 +397,14 @@ img {
 }
 
 .portfolio-list-item {
+  position: relative;
   width: calc((100% - 48px) / 3);
   background-color: #ffffff;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
-.overlay {
+.overlay-wrapper {
   position: relative;
   overflow: hidden;
 }
@@ -401,6 +412,7 @@ img {
 .overlay-text {
   position: absolute;
   top: 0;
+  left: 0;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -411,12 +423,11 @@ img {
   width: 100%;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
-.overlay:hover .overlay-text,
-.overlay:focus .overlay-text {
+.portfolio-list-item:hover .overlay-text {
   transform: translateY(0%);
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .project-foto {
@@ -493,6 +504,7 @@ img {
   gap: 16px;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .icon-item {
@@ -604,14 +616,16 @@ img {
 
 /* Modal window */
 
-.backdrop {
+/* .backdrop {
   position: fixed;
   inset: 0;
   z-index: 2;
-  /* background-color: rgb(17 17 17 / 50%); */
+  -
+  background-color: rgb(17 17 17 / 50%); 
+  -
 }
 
-/* .modal {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -623,7 +637,6 @@ img {
 
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
-  background: ;
 }
 
 .modal-btn {
@@ -633,11 +646,13 @@ img {
   min-width: 24px;
   min-height: 24px;
   padding: 0;
-  background-color: #fcfcfc;
+  background-color: transparent;
   border: none;
+  color: ;
 }
 
 .modal-btn-icon {
+  stroke: currentColor;
 } */
 
 .backdrop-overlay {
